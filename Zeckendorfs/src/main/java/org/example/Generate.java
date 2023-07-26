@@ -23,7 +23,7 @@ public class Generate {
 
         //let's enter the loop and run it until higherNumber reaches the value inside b
         while(higherNumber <= b){
-            //If the fibonacci number is bigger than a then add it to the list
+            //If the fibonacci number is between a and b add it to the list
             if(higherNumber >= a){
                 fibonacciNumbers.add(higherNumber);
             }
@@ -36,5 +36,11 @@ public class Generate {
         }
 
         return fibonacciNumbers;
+    }
+
+
+    //now that i have the list of fibonacci numbers i can check what Fib. numbers are in the sum of the representation
+    public void zeckendorfsRepresentation (){
+        
     }
 }
