@@ -67,6 +67,7 @@ public class Generate {
 
     }
 
+    //this method gets the Zeckendorf sum for all numbers in a range
     public List <StringBuilder> getTheZeckendorfSumForAllNumbers(Long lowerRange, Long upperRange ){
 
         List<StringBuilder> listOfZeckendorfSumForAllNumbers= new ArrayList<>();
@@ -76,7 +77,6 @@ public class Generate {
         }
 
         return listOfZeckendorfSumForAllNumbers;
-
     }
 
 
