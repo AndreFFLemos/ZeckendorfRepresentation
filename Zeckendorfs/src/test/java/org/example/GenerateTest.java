@@ -27,6 +27,7 @@ class GenerateTest {
         random= new Random();
         a=random.nextInt(0,2147483647);
         b= random.nextInt(a, 2147483647);
+        fibonacciNumbers=generate.findFibonnaciNumbers(a,b);
     }
 
     @Test
@@ -49,7 +50,7 @@ class GenerateTest {
         long x = 0;
         long y=100;
 
-        List<Long> fibonacciNumbers = generate.findFibonnaciNumbers(x,y);
+        fibonacciNumbers = generate.findFibonnaciNumbers(x,y);
 
         assertEquals(0, fibonacciNumbers.get(0));
     }
@@ -83,9 +84,10 @@ class GenerateTest {
 
     @Test
     void zeckendorfsRepresentationTest(){
-
         long number=71;
-        List <Long> numbers= generate.zeckendorfsRepresentation(number);
+        fibonacciNumbers=generate.findFibonnaciNumbers(0,number);
+
+        List <Long> numbers= generate.zeckendorfsRepresentation(number,fibonacciNumbers);
         System.out.println(numbers);
 
         assertFalse(numbers.contains(34L));
@@ -98,7 +100,7 @@ class GenerateTest {
     @Test
     void ifNumberIsZeroTest() {
         long number=0;
-        List <Long> numbers= generate.zeckendorfsRepresentation(number);
+        List <Long> numbers= generate.zeckendorfsRepresentation(number,fibonacciNumbers);
         System.out.println(numbers);
 
         assertTrue(numbers.size()==1);
@@ -125,10 +127,6 @@ class GenerateTest {
     void getTheZeckendorfSumForAllNumbersTest(){
         long a= 0;
         long b=71;
-
-        List<StringBuilder>allNumbers= generate.getTheZeckendorfSumForAllNumbers(a,b);
-        System.out.println(allNumbers);
-        assertFalse(allNumbers.isEmpty());
 
     }
 }

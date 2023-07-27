@@ -12,8 +12,9 @@ public class main {
         long a= random.nextLong(0L,2147483647L);
         long b= random.nextLong(a,2147483647L);
 
-        System.out.println("/n" + generate.getTheZeckendorfSumForAllNumbers(a,b));
-
+        System.out.println("A is " + a);
+        System.out.println("B is " + b);
+        generate.getTheZeckendorfSumForAllNumbers(0L,71L);
     }
 
 }
