@@ -47,13 +47,15 @@ public class Generate {
             return fibonnacisInTheRepresentation;
         }
 
-        for (int i = fibonaccis.size() - 1; i >= 0; i++) {
+        for (int i = fibonaccis.size()-1; i > 0; i--) {
             long currentFibonacciNumber = fibonaccis.get(i);
+
             if (currentFibonacciNumber <= number) {
                 fibonnacisInTheRepresentation.add(currentFibonacciNumber);
                 number = number - currentFibonacciNumber;
             }
         }
+        System.out.println(fibonnacisInTheRepresentation);
         return fibonnacisInTheRepresentation;
 
     }

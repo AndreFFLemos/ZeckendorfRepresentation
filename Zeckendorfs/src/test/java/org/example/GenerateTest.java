@@ -85,9 +85,14 @@ class GenerateTest {
     void zeckendorfsRepresentationTest(){
 
         long number=71;
-        generate.zeckendorfsRepresentation(number);
+        List <Long> numbers= generate.zeckendorfsRepresentation(number);
+        System.out.println(numbers);
 
-        assertTrue();
+        assertFalse(numbers.contains(34L));
+        assertEquals(3,numbers.size());
+        assertTrue(numbers.contains(55L));
+        assertTrue(numbers.contains(3L));
+        assertFalse(numbers.contains(0L));
 
     }
 
