@@ -38,13 +38,14 @@ public class Generate {
 
 
     //now that i have the list of fibonacci numbers i can check what Fib. numbers are in the sum of the representation
-    public void zeckendorfsRepresentation (long number){
+    public String zeckendorfsRepresentation (long number){
 
         List <Long> fibonaccis= new ArrayList<>();
-
         fibonaccis= findFibonnaciNumbers(0,number);
 
-        
+
+
+
 
         
     }
