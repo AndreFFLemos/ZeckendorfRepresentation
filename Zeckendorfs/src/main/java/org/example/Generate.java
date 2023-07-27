@@ -55,7 +55,7 @@ public class Generate {
                 number = number - currentFibonacciNumber;
             }
         }
-        System.out.println(fibonnacisInTheRepresentation);
+
         return fibonnacisInTheRepresentation;
 
     }
@@ -64,12 +64,14 @@ public class Generate {
 
         StringBuilder fibonnacisInTheRepresentationAsAString= new StringBuilder();
 
-        for (int i=0;i>fibonnacisInTheRepresentation.size()-1;i++){
+        for (int i=0;i<fibonnacisInTheRepresentation.size();i++){
             fibonnacisInTheRepresentationAsAString.append(fibonnacisInTheRepresentation.get(i));
             fibonnacisInTheRepresentationAsAString.append("+");
         }
 
-        System.out.println(fibonnacisInTheRepresentationAsAString);
+        fibonnacisInTheRepresentationAsAString.deleteCharAt(fibonnacisInTheRepresentationAsAString.length()-1);
+
+
         return fibonnacisInTheRepresentationAsAString;
     }
 }

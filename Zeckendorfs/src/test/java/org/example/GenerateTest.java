@@ -107,6 +107,10 @@ class GenerateTest {
 
         StringBuilder convert= generate.convertToStringBuilder(numbers);
 
-        System.out.println(convert.toString());
+        System.out.println(convert);
+
+        assertFalse(convert.isEmpty());
+        assertEquals("55+13+3",convert.toString());
+
     }
 }
