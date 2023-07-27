@@ -95,7 +95,15 @@ class GenerateTest {
         assertFalse(numbers.contains(0L));
 
     }
+    @Test
+    void ifNumberIsZeroTest() {
+        long number=0;
+        List <Long> numbers= generate.zeckendorfsRepresentation(number);
+        System.out.println(numbers);
 
+        assertTrue(numbers.size()==1);
+        assertEquals(0, numbers.get(0));
+    }
 
     @Test
     void convertToStringBuilderTest() {
@@ -111,6 +119,16 @@ class GenerateTest {
 
         assertFalse(convert.isEmpty());
         assertEquals("55+13+3",convert.toString());
+
+    }
+    @Test
+    void getTheZeckendorfSumForAllNumbersTest(){
+        long a= 0;
+        long b=71;
+
+        List<StringBuilder>allNumbers= generate.getTheZeckendorfSumForAllNumbers(a,b);
+        System.out.println(allNumbers);
+        assertFalse(allNumbers.isEmpty());
 
     }
 }
