@@ -12,9 +12,10 @@ public class main {
         Generate generate= new Generate();
 
         Random random= new Random();
-        BigInteger a = BigInteger.valueOf(random.nextInt(2147483647));
-        BigInteger b = new BigInteger(2147483647 - a.intValue(), random).add(a);
+        long a = random.nextLong(0,2147483647);
+        long b = random.nextLong(a,2147483647);
 
+        //generate.getTheZeckendorfSumForAllNumbers(a,b);
         generate.getTheZeckendorfSumForAllNumbers(a,b);
 
     }
