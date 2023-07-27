@@ -5,13 +5,11 @@ import java.util.List;
 import java.util.Random;
 
 public class Generate {
-    private Random random= new Random();
-    private long a= random.nextLong(0,2147483647);
-    private long b= random.nextLong(a, 2147483647);
-    List<Long> fibonacciNumbers= new ArrayList<>();
+
 
     public List<Long> findFibonnaciNumbers (long a, long b){
 
+        List<Long> fibonacciNumbers= new ArrayList<>();
         //The first two int in a Fibonacci list are
         long lowerNumber = 0;
         long higherNumber = 1;
@@ -40,7 +38,14 @@ public class Generate {
 
 
     //now that i have the list of fibonacci numbers i can check what Fib. numbers are in the sum of the representation
-    public void zeckendorfsRepresentation (){
+    public void zeckendorfsRepresentation (long number){
+
+        List <Long> fibonaccis= new ArrayList<>();
+
+        fibonaccis= findFibonnaciNumbers(0,number);
+
+        
+
         
     }
 }
