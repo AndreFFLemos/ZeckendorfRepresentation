@@ -35,6 +35,8 @@ public class Generate {
     //this method finds and prints the list of non-sequential Fibonacci's numbers which their sum is a particular number
     public void zeckendorfsRepresentationForANumber (long number, List<Long> fibonacciNumbers) {
 
+        StringBuilder zeckendorfsRepresentationForANumberAsAString= new StringBuilder();
+
         //now to check if the numbers aren't sequential we have to run through each in the fibonacci's list
         for (int i = fibonacciNumbers.size()-1; i > 0; i--) {
             //the last added Fibonacci number is the highest one so that is the first to be used
@@ -42,7 +44,7 @@ public class Generate {
             // if it's smaller add it in the representation and we update the integer value to find the next.
             // So if the Number is 71, then 71-55=16. In the second iteration we compare 34<16, in the third 21<16, in the 4th 13<16...
             if (fibonacciNumbers.get(i)<=number) {
-                System.out.print(fibonacciNumbers.get(i) + "+");
+                zeckendorfsRepresentationForANumberAsAString.append(fibonacciNumbers.get(i)).append("+");
                 number = number-fibonacciNumbers.get(i);
             }
 
@@ -51,7 +53,8 @@ public class Generate {
                 break;
             }
         }
-        System.out.println();
+        zeckendorfsRepresentationForANumberAsAString.deleteCharAt(zeckendorfsRepresentationForANumberAsAString.length()-1);
+        System.out.println(zeckendorfsRepresentationForANumberAsAString);
     }
 
     //this method gets the Zeckendorf sum for all numbers in a range
