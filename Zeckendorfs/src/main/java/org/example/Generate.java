@@ -15,23 +15,18 @@ public class Generate {
         long lowerNumber = 0;
         long higherNumber = 1;
 
-        //so if a is 0, then add it
-        if(a==0){
-            fibonacciNumbers.add(a);
-        }
+        fibonacciNumbers.add(lowerNumber);
+        fibonacciNumbers.add(higherNumber);
 
         //let's enter the loop and run it until higherNumber reaches the value inside b
         while(higherNumber<b) {
-            //If the fibonacci number is between a and b add it to the list
-            if(higherNumber>a){
-                fibonacciNumbers.add(higherNumber);
-            }
             //since a Fibonnaci number is the result of the sum of the two previous Fibonacci numbers
             long sum = lowerNumber +higherNumber;
             //then the lower Fibonacci Number receives the higher Fibonnaci Number
             lowerNumber = higherNumber;
             //and the higher number receives the sum value because it is the next Fibonnaci number
             higherNumber = sum;
+            fibonacciNumbers.add(higherNumber);
         }
 
         return fibonacciNumbers;
@@ -47,9 +42,10 @@ public class Generate {
             // if it's smaller add it in the representation and we update the integer value to find the next.
             // So if the Number is 71, then 71-55=16. In the second iteration we compare 34<16, in the third 21<16, in the 4th 13<16...
             if (fibonacciNumbers.get(i)<=number) {
-                System.out.println(fibonacciNumbers.get(i));
+                System.out.print(fibonacciNumbers.get(i) + "+");
                 number = number-fibonacciNumbers.get(i);
             }
+
             //if number reached 0, no more fibonacci numbers are needed for the representation
             if(number == 0){
                 break;
