@@ -69,6 +69,7 @@ public class Generate {
             fibonnacisInTheRepresentationAsAString.append("+");
         }
 
+        System.out.println(fibonnacisInTheRepresentationAsAString);
         return fibonnacisInTheRepresentationAsAString;
     }
 }

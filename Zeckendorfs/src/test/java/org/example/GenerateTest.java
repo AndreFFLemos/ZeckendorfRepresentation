@@ -96,4 +96,17 @@ class GenerateTest {
 
     }
 
+
+    @Test
+    void convertToStringBuilderTest() {
+        long number=71;
+        List <Long> numbers= new ArrayList<>();
+        numbers.add(55L);
+        numbers.add(13L);
+        numbers.add(3L);
+
+        StringBuilder convert= generate.convertToStringBuilder(numbers);
+
+        System.out.println(convert.toString());
+    }
 }
