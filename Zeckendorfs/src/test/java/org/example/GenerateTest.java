@@ -34,7 +34,7 @@ class GenerateTest {
         Assert.assertTrue(a<b);
     }
     @Test
-    void checkIfFibonacciNumberIsNotIncludedInTheRange(){
+    void checkIfFibonacciNumberIsNotIncludedInTheRangeT(){
         int x= 100;
         int y=200;
 
@@ -45,7 +45,7 @@ class GenerateTest {
 
     }
     @Test
-    void checkIfFirstElementIsZero() {
+    void checkIfFirstElementIsZeroTest() {
         long x = 0;
         long y=100;
 
@@ -69,7 +69,7 @@ class GenerateTest {
 
 
     @Test
-    void findFibonnaciNumbers() {
+    void findFibonnaciNumbersTest() {
         long x= 0;
         long y=1000;
         fibonacciNumbers= generate.findFibonnaciNumbers(x,y);
@@ -81,5 +81,14 @@ class GenerateTest {
     }
 
 
+    @Test
+    void zeckendorfsRepresentationTest(){
+
+        long number=71;
+        generate.zeckendorfsRepresentation(number);
+
+        assertTrue();
+
+    }
 
 }
