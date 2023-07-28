@@ -3,7 +3,6 @@ package org.example;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
 
 public class main {
 
@@ -15,7 +14,6 @@ public class main {
         long a = random.nextLong(0,2147483647);
         long b = random.nextLong(a,2147483647);
 
-        //generate.getTheZeckendorfSumForAllNumbers(a,b);
         generate.getTheZeckendorfSumForAllNumbers(a,b);
 
     }

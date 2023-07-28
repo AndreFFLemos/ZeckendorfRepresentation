@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -16,8 +17,8 @@ class GenerateTest {
 
     private Generate generate= new Generate();
     private Random random;
-    private int a;
-    private int b;
+    private long a;
+    private long b;
 
     List<Long> fibonacciNumbers;
 
@@ -25,19 +26,20 @@ class GenerateTest {
     void setup(){
         fibonacciNumbers=new ArrayList<>();
         random= new Random();
-        a=random.nextInt(0,2147483647);
-        b= random.nextInt(a, 2147483647);
-        fibonacciNumbers=generate.findFibonnaciNumbers(a,b);
+        a=random.nextLong(0L,2147483647L);
+        b= random.nextLong(a, 2147483647L);
+
     }
 
     @Test
     void isBHigherThanATest(){
+        fibonacciNumbers=generate.findFibonnaciNumbers(a,b);
         Assert.assertTrue(a<b);
     }
     @Test
     void checkIfFibonacciNumberIsNotIncludedInTheRangeT(){
-        int x= 100;
-        int y=200;
+        long x= 100;
+        long y=200;
 
         fibonacciNumbers=generate.findFibonnaciNumbers(x,y);
 
@@ -83,29 +85,36 @@ class GenerateTest {
 
 
     @Test
-    void zeckendorfsRepresentationTest(){
+    void zeckendorfsRepresentationForASmallNumberTest(){
         long number=71;
-        fibonacciNumbers=generate.findFibonnaciNumbers(0,number);
+        List<Long> fibonacciNumbers = Arrays.asList(0L,1L,1L,2L,3L,5L,8L,13L,21L, 35L,55L,89L);
 
-        List <Long> numbers= generate.zeckendorfsRepresentation(number,fibonacciNumbers);
-        System.out.println(numbers);
+        String representation= generate.zeckendorfsRepresentationForANumber(number,fibonacciNumbers);
 
-        assertFalse(numbers.contains(34L));
-        assertEquals(3,numbers.size());
-        assertTrue(numbers.contains(55L));
-        assertTrue(numbers.contains(3L));
-        assertFalse(numbers.contains(0L));
-
+        assertFalse(representation.isEmpty());
+        assertEquals("55+13+3", representation);
     }
+    @Test
+    void zeckendorfsRepresentationForALargeNumberTest(){
+        long number=214748364;
+        List<Long> fibonacciNumbers = Arrays.asList(0L,1L,1L,2L,3L,5L,8L,13L,21L,34L,55L,89L,144L,233L,377L,610L,987L,1597L,2584L,4181L,6765L,10946L,17711L,28657L,46368L, 75025L,121393L, 196418L,317811L, 514229L,832040L,1346269L,2178309L, 3524578L,5702887L,9227465L,14930352L,24157817L,39088169L,63245986L,102334155L,165580141L);
+
+        String representation= generate.zeckendorfsRepresentationForANumber(number,fibonacciNumbers);
+
+        assertFalse(representation.isEmpty());
+        assertEquals("165580141+39088169+9227465+832040+17711+2584+233+21", representation);
+    }
+    /*
     @Test
     void ifNumberIsZeroTest() {
         long number=0;
-        List <Long> numbers= generate.zeckendorfsRepresentation(number,fibonacciNumbers);
+        generate.zeckendorfsRepresentationForANumber(number,fibonacciNumbers);
         System.out.println(numbers);
 
         assertTrue(numbers.size()==1);
         assertEquals(0, numbers.get(0));
     }
+*
 
     @Test
     void convertToStringBuilderTest() {
@@ -123,10 +132,5 @@ class GenerateTest {
         assertEquals("55+13+3",convert.toString());
 
     }
-    @Test
-    void getTheZeckendorfSumForAllNumbersTest(){
-        long a= 0;
-        long b=71;
-
-    }
+    */
 }
