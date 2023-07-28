@@ -36,8 +36,12 @@ public class Generate {
     public String zeckendorfsRepresentationForANumber (long number, List<Long> fibonacciNumbers) {
 
         StringBuilder zeckendorfsRepresentationForANumberAsAString= new StringBuilder();
+        if (number==0){
+            zeckendorfsRepresentationForANumberAsAString.append(number).append("+");
+        }
 
         //now to check if the numbers aren't sequential we have to run through each in the fibonacci's list
+        //i stops before 0 because it would be in every representation
         for (int i = fibonacciNumbers.size()-1; i > 0; i--) {
 
             //the last added Fibonacci number is the highest one so that is the first to be used
@@ -47,11 +51,6 @@ public class Generate {
             if (fibonacciNumbers.get(i)<=number) {
                 zeckendorfsRepresentationForANumberAsAString.append(fibonacciNumbers.get(i)).append("+");
                 number = number-fibonacciNumbers.get(i);
-            }
-
-            //if the value of the number reaches 0, no more fibonacci numbers are needed
-            if(number == 0){
-                break;
             }
         }
         //the last char is always a + so remove it in each representation

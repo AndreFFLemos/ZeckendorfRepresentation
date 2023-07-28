@@ -70,7 +70,6 @@ class GenerateTest {
         return (s * s == n);
     }
 
-
     @Test
     void findFibonnaciNumbersTest() {
         long x= 0;
@@ -82,7 +81,6 @@ class GenerateTest {
         assertTrue(isFibonacci(fibonacciNumbers.get(10)));
         assertTrue(isFibonacci(fibonacciNumbers.get(15)));
     }
-
 
     @Test
     void zeckendorfsRepresentationForASmallNumberTest(){
@@ -104,33 +102,22 @@ class GenerateTest {
         assertFalse(representation.isEmpty());
         assertEquals("165580141+39088169+9227465+832040+17711+2584+233+21", representation);
     }
-    /*
+
     @Test
     void ifNumberIsZeroTest() {
         long number=0;
-        generate.zeckendorfsRepresentationForANumber(number,fibonacciNumbers);
-        System.out.println(numbers);
 
-        assertTrue(numbers.size()==1);
-        assertEquals(0, numbers.get(0));
+        String isZero= generate.zeckendorfsRepresentationForANumber(number,fibonacciNumbers);
+
+        assertTrue(isZero.equals("0"));
     }
-*
 
     @Test
-    void convertToStringBuilderTest() {
-        long number=71;
-        List <Long> numbers= new ArrayList<>();
-        numbers.add(55L);
-        numbers.add(13L);
-        numbers.add(3L);
+    void getTheZeckendorfSumForAllNumbersTest(){
+        long lower= 100;
+        long higher=200;
 
-        StringBuilder convert= generate.convertToStringBuilder(numbers);
-
-        System.out.println(convert);
-
-        assertFalse(convert.isEmpty());
-        assertEquals("55+13+3",convert.toString());
+        generate.getTheZeckendorfSumForAllNumbers(lower,higher);
 
     }
-    */
 }
