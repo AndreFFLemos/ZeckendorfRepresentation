@@ -1,6 +1,5 @@
 package org.example;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -34,7 +33,7 @@ class GenerateTest {
     @Test
     void isBHigherThanATest(){
         fibonacciNumbers=generate.findFibonnaciNumbers(a,b);
-        Assert.assertTrue(a<b);
+        assertTrue(a<b);
     }
     @Test
     void checkIfFibonacciNumberIsNotIncludedInTheRangeT(){
